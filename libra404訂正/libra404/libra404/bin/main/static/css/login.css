@@ -1,0 +1,32 @@
+
+body { 
+    font-family: sans-serif; 
+    text-align: center; 
+}
+form {
+    display: inline-block; /* 全体を中央寄せ */
+    text-align: left;    /* 中身は左寄せ */
+}
+.form-group {
+    margin: 30px 0;
+}
+label {
+    display: inline-block;
+    width: 150px;       /* ラベル幅を揃える */
+}
+input {
+    width: 300px;
+    padding: 5px;
+}
+.btn {
+    border: 1px solid #000;
+    border-radius: 8px;     /* 角丸 */
+    padding: 5px 15px;
+    margin: 20px;
+    background: #fff;
+    cursor: pointer;
+}
+.button-group {
+    text-align: center;
+    margin-top: 15px;
+}

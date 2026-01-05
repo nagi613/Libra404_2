@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貸出完了画面</title>
+    <link rel="stylesheet" href="../static/css/lentconf.css">
+</head>
+
+<body>
+
+    <div id="book-title-display" th:text="${title}">（本のタイトル）</div>
+    <div id="conf-message">貸出完了</div>
+<!-- パスの記述が間違っていました -->
+    <div class="button-group">
+        <!-- 検索画面に戻る -->
+        <a class="btn" id="return-search-btn" th:href="@{/Libra404/search}">
+            検索画面に戻る
+        </a>
+
+        <!-- 本棚画面 -->
+        <a class="btn" id="bookshelf-btn" th:href="@{/Libra404/bookshelf}">
+            本棚
+        </a>
+    </div>
+
+</body>
+</html>

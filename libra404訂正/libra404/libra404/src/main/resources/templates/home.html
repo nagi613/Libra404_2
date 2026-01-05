@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libra404 - ホーム</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Libra404</h1>
+        <hr>
+    </header>
+
+    <div class="main-content">
+        <nav class="main-actions">
+            <a href="./searchDisp" class="button">本を探す</a>
+            <!-- パスを変えました -->
+            <a href="./bookshelf" class="button">本棚</a>
+        </nav>
+
+        <aside class="side-actions">
+            
+            <div id="logged-out" th:if="${!session.login}"> 
+                <a href="./loginDisp" class="button button-login-info">ログイン</a>
+                <a href="./signupDisp" class="button">新規登録</a>
+            </div>
+            
+            <div id="logged-in" th:if="${session.login}">
+                <a href="./acinfoDisp" class="button button-login-info">アカウント情報</a>
+                <a href="./logout" class="button">ログアウト</a> 
+            </div>
+            
+        </aside>
+    </div>
+
+    <footer id="loginMessage" class="message-area" th:if="${!session.login}">
+        <p>※ログインをしてください</p>
+        <p>はじめての人は新規登録をしてください</p>
+    </footer>
+
+    </body>
+</html>

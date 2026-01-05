@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+    
+    <div class="login-container"> 
+        <h1>ログイン</h1>
+            <form th:action="@{/}" method="post" th:object="${loginForm}" id="loginForm">
+        
+            <div class="form-group">
+                <label for="email">メールアドレス:</label>
+                <input type="text" id="email" name="mail" th:value="*{mail}">
+                <div th:if="${#fields.hasErrors('mail')}"
+                            th:errors="*{mail}" th:errorclass="red"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">パスワード:</label>
+                <input type="password" id="password" name="password" th:value="*{password}">
+                <div th:if="${#fields.hasErrors('password')}"
+                            th:errors="*{password}" th:errorclass="red"></div>
+            </div>
+
+            <div class="button-group top-buttons">
+                <a class="btn cancel-btn" href="./cancelLogin">キャンセル</a>
+                <button type="submit" class="btn login-btn" th:formaction="@{/Libra404/login}">ログイン</button>
+            </div>
+        </form>
+
+        <div class="button-group signup-group">
+            <a href="./signupDisp" class="btn signup-btn">新規登録</a>
+        </div>
+        
+        <p id="error-message" class="error-message">IDまたはパスワードが間違っています。</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* ==================
+   ヘッダー：中央固定＋左右固定
+   ================== */
+   .bookshelf-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 左側（ホーム） */
+.home-link-container {
+    flex: 0 0 auto;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    left: 20px; /* 画面左固定 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.book-icon {
+    font-size: var(--icon-size);
+    color: #4285F4;
+    margin: 0;
+}
+
+/* 中央タイトル（常に真ん中） */
+.header-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    line-height: 1.2;
+}
+
+.count-display {
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* 右側（プルダウン＋フィルター） */
+.header-controls {
+    position: absolute;
+    right: 20px; /* 画面右固定 */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+.filter-dropdown {
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    font-size: 15px;
+    background: #fff;
+}
+
+.filter-button {
+    border: 1px solid var(--border-color);
+    background: #fff;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.filter-icon {
+    font-size: 20px;
+    color: #000;
+}
+
+/* スマホ対応（700px以下でも左右固定） */
+@media screen and (max-width: 700px) {
+    .bookshelf-header {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .home-link-container {
+        left: 10px;
+    }
+
+    .header-controls {
+        right: 10px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .count-display {
+        font-size: 12px;
+    }
+}

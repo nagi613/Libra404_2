@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Libra404 - アカウント情報</title>
+  <link rel="stylesheet" th:href="@{/css/acinfo.css}">
+  </head>
+<body>
+  <h1>アカウント情報</h1>
+    <div class="form-group">
+      <label for="mname">氏名:</label>
+      <span th:text="${member.mname}"></span>
+    </div>
+    <div class="form-group">
+      <label for="address">住所:</label>
+      <span th:text="${member.address}"></span>
+    </div>
+    <div class="form-group">
+      <label for="mail">メールアドレス:</label>
+      <span th:text="${member.mail}"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">パスワード:</label>
+      <span th:text="${member.password}"></span>
+    </div>
+
+    <div class="button-group">
+      <a href="./home" class="button">戻る</a>
+      <a href="./acinfochangeDisp" class="button">編集</a>
+    </div>
+</body>
+</html>
